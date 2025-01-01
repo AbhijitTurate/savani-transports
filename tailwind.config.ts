@@ -14,6 +14,12 @@ export default {
         "primary-text-color": "#323232",
         "primary-text-color-70": "rgba(50, 50, 50, 0.7)",
       },
+      lineHeight: {
+        86: "5.375rem", // 86px = 5.375rem
+      },
+      spacing: {
+        "0.875": "0.875rem", // 14px
+      },
     },
   },
   plugins: [],
