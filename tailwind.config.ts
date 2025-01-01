@@ -11,6 +11,8 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        "primary-text-color": "#323232",
+        "primary-text-color-70": "rgba(50, 50, 50, 0.7)",
       },
     },
   },
