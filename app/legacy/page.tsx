@@ -4,7 +4,7 @@ import Navbar from '@/components/Navbar'
 
 import React from 'react'
 import AboutusBanner from './components/AboutusBanner'
-import { reverse } from 'dns'
+
 
 const Legacy = () => {
     const missionVisionData = [{
@@ -35,7 +35,7 @@ const Legacy = () => {
         <div className='flex flex-col min-h-screen '>
             <Navbar />
 
-            <div className='flex flex-col  mx-[5.25rem] my-16 gap-14'>
+            <div className='flex flex-col mx-8 md:mx-[5.25rem] my-8 md:my-16 gap-14'>
 
                 {aboutData.map((item, index) => {
                     const shouldReverse = index % 2 != 0
@@ -43,7 +43,7 @@ const Legacy = () => {
                     return <AboutusBanner key={index} {...updatedItemObject} />
                 })}
             </div>
-            <div className='flex flex-col md:flex-row mx-[5.25rem] my-16 gap-8'>
+            <div className='flex flex-col md:flex-row mx-8 md:mx-[5.25rem] my-8 md:my-16 gap-8'>
                 {missionVisionData.map((item, index) => <MissionVision key={index} {...item} />)}
             </div>
             <Footer />

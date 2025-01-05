@@ -8,9 +8,9 @@ const MissionVision = ({ icon, title, description }: any) => {
                     src={`/assets/${icon}.svg`}
                     alt={title}
                     className='h-12 w-12' />
-                <h1 className='text-2xl font-bold'>{title}</h1>
+                <h1 className='text-40 font-semibold font-figtree'>{title}</h1>
             </div>
-            <p className='text-lg mt-2'>{description}</p>
+            <p className='text-lg mt-2 text-base font-figtree'>{description}</p>
         </div>
     )
 }
