@@ -12,7 +12,7 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       <Navbar />
 
-      <div className="flex flex-col items-center justify-center gap-8 md:gap-[6.5rem] mx-[5.25rem] my-16">
+      <div className="flex flex-col items-center justify-center gap-16 md:gap-[6.5rem] mx-8 md:mx-[5.25rem] my-16">
         <TransportSolutions />
         <ContactUsbanner />
         <FAQ />
