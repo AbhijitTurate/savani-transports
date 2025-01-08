@@ -30,6 +30,9 @@ export default {
         "40": "40px", // Add custom font size
         "32": "32px",
       },
+      letterSpacing: {
+        "22": "0.22em", // 22% letter-spacing
+      },
     },
   },
   plugins: [],

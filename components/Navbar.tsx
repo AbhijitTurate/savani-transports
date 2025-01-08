@@ -35,20 +35,20 @@ export default function Navbar() {
                         />
                     </svg>
                 </button>
-                <ul className={`hidden md:flex gap-20 text-lg font-medium`}>
+                <ul className={`hidden md:flex gap-20 text-lg`}>
                     <li>
                         <Link legacyBehavior href="/">
-                            <a>Home</a>
+                            <a className="font-figtree font-regular text-2xl hover:text-blue-600">Home</a>
                         </Link>
                     </li>
                     <li>
-                        <Link legacyBehavior href="/about">
-                            <a>About</a>
+                        <Link legacyBehavior href="/">
+                            <a className="font-figtree font-regular text-2xl hover:text-blue-600">About</a>
                         </Link>
                     </li>
                     <li>
                         <Link legacyBehavior href="/legacy">
-                            <a>Legacy</a>
+                            <a className="font-figtree font-regular text-2xl hover:text-blue-600">Legacy</a>
                         </Link>
                     </li>
                 </ul>
@@ -66,17 +66,17 @@ export default function Navbar() {
                 <ul className={`md:hidden flex flex-col justify-center items-center gap-16 my-4 list-none font-medium`}>
                     <li>
                         <Link legacyBehavior href="/">
-                            <a>Home</a>
+                            <a className="font-figtree font-regular text-2xl hover:text-blue-600">Home</a>
                         </Link>
                     </li>
                     <li>
-                        <Link legacyBehavior href="/about">
-                            <a>About</a>
+                        <Link legacyBehavior href="/">
+                            <a className="font-figtree font-regular text-2xl hover:text-blue-600">About</a>
                         </Link>
                     </li>
                     <li>
                         <Link legacyBehavior href="/legacy">
-                            <a>Legacy</a>
+                            <a className="font-figtree font-regular text-2xl hover:text-blue-600">Legacy</a>
                         </Link>
                     </li>
                     <li>
