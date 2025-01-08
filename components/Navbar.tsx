@@ -63,7 +63,7 @@ export default function Navbar() {
             </div>
             {/* Mobile Button */}
             {isOpen && (
-                <ul className={`md:hidden flex flex-col justify-center items-center gap-16 my-4 list-none font-medium`}>
+                <ul className={`md:hidden flex flex-col justify-center items-center gap-16 my-4 list-none`}>
                     <li>
                         <Link legacyBehavior href="/">
                             <a className="font-figtree font-regular text-2xl hover:text-blue-600">Home</a>
