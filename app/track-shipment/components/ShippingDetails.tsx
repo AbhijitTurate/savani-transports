@@ -54,7 +54,7 @@ const ShippingDetails = () => {
                             Invoice ID: <span className="font-medium text-primary-text-color">#012019391012</span>{" "}
                             <a
                                 href="#"
-                                className="text-blue-600 hover:text-blue-800 font-medium"
+                                className="text-brandIndigo hover:text-blue-800 font-medium"
                             >
                                 View Invoice
                             </a>

@@ -15,6 +15,7 @@ export default {
         "primary-text-color-70": "rgba(50, 50, 50, 0.7)",
         "secondary-bg-color": "#F6F6F6",
         "tertiary-bg-color": "#F6F8FF",
+        brandIndigo: '#515585',
       },
       lineHeight: {
         86: "5.375rem", // 86px = 5.375rem
@@ -32,6 +33,15 @@ export default {
       },
       letterSpacing: {
         "22": "0.22em", // 22% letter-spacing
+      },
+      animation: {
+        scroll: 'scroll 50s linear infinite',
+      },
+      keyframes: {
+        scroll: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-66.66%)' }, // Adjust based on how many sets you repeat
+        },
       },
     },
   },

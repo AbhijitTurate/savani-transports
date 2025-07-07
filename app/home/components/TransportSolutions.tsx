@@ -9,7 +9,7 @@ export default function TransportSolutions() {
                 <p className="text-base font-figtree font-regular mb-8">
                     From heavy-duty cargo to door-to-door delivery, we offer a full range of logistics services tailored to your needs.
                 </p>
-                <button className="px-14 py-4 bg-transparent border border-blue-600 text-blue-600 font-semibold test-base hover:bg-blue-600 hover:text-white transition">
+                <button className="px-14 py-4 bg-transparent border border-brandIndigo text-brandIndigo font-semibold test-base hover:bg-brandIndigo hover:text-white transition">
                     Contact Us
                 </button>
             </div>
@@ -18,12 +18,12 @@ export default function TransportSolutions() {
             {/* <div className="flex-shrink-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"> */}
             <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
                 {[
-                    { title: "Service 1", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", icon: "/assets/truck.svg" },
+                    { title: "Service 1", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", icon: "/assets/road.svg" },
                     { title: "Service 2", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", icon: "/assets/shield.svg" },
                     { title: "Service 4", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", icon: "/assets/speed.svg" },
                     { title: "Service 4", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", icon: "/assets/shield.svg" },
                     { title: "Service 2", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", icon: "/assets/speed.svg" },
-                    { title: "Service 2", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", icon: "/assets/truck.svg" },
+                    { title: "Service 2", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", icon: "/assets/road.svg" },
                 ].map((service, index) => (
                     <div
                         key={index}

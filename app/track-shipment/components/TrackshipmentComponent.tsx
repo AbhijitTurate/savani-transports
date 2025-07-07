@@ -42,10 +42,10 @@ const TrackshipmentComponent = () => {
                         placeholder="Enter Lorry Number"
                         className="flex-grow w-full border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
-                    <button onClick={handleClick} className="bg-blue-600 text-white min-w-[10.125rem] px-10 py-4 rounded-lg font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Find Lorry</button>
+                    <button onClick={handleClick} className="bg-brandIndigo text-white min-w-[10.125rem] px-10 py-4 rounded-lg font-medium hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500">Find Lorry</button>
                 </div>
                 <h1 className="font-figtree text-base">
-                    Don't Have your Lorry number ? React out to our help desk  <a href="/contact" className="text-blue-600 font-figtree font-semibold hover:underline">
+                    Don't Have your Lorry number ? React out to our help desk  <a href="/contact" className="text-brandIndigo font-figtree font-semibold hover:underline">
                         Contact
                     </a>.
                 </h1>

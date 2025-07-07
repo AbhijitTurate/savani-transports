@@ -17,7 +17,7 @@ export default function Navbar() {
                     />
                 </div>
                 <button
-                    className="text-blue-600 md:hidden focus:outline-none"
+                    className="text-brandIndigo md:hidden focus:outline-none"
                     onClick={() => setIsOpen(!isOpen)}
                 >
                     <svg
@@ -38,24 +38,24 @@ export default function Navbar() {
                 <ul className={`hidden md:flex gap-20 text-lg`}>
                     <li>
                         <Link legacyBehavior href="/">
-                            <a className="font-figtree font-regular text-2xl hover:text-blue-600">Home</a>
+                            <a className="font-figtree font-regular text-2xl hover:text-brandIndigo">Home</a>
                         </Link>
                     </li>
                     <li>
                         <Link legacyBehavior href="/">
-                            <a className="font-figtree font-regular text-2xl hover:text-blue-600">About</a>
+                            <a className="font-figtree font-regular text-2xl hover:text-brandIndigo">About</a>
                         </Link>
                     </li>
                     <li>
                         <Link legacyBehavior href="/legacy">
-                            <a className="font-figtree font-regular text-2xl hover:text-blue-600">Legacy</a>
+                            <a className="font-figtree font-regular text-2xl hover:text-brandIndigo">Legacy</a>
                         </Link>
                     </li>
                 </ul>
                 {/* Button */}
                 <div className="hidden md:block">
                     <Link legacyBehavior href="/track-shipment">
-                        <a className="px-8 py-4 bg-transparent border border-blue-600 text-blue-600 font-semibold test-base hover:bg-blue-600 hover:text-white transition">
+                        <a className="px-8 py-4 bg-transparent border border-brandIndigo text-brandIndigo font-semibold test-base hover:bg-brandIndigo hover:text-white transition">
                             Track Shipment
                         </a>
                     </Link>
@@ -66,22 +66,22 @@ export default function Navbar() {
                 <ul className={`md:hidden flex flex-col justify-center items-center gap-16 my-4 list-none`}>
                     <li>
                         <Link legacyBehavior href="/">
-                            <a className="font-figtree font-regular text-2xl hover:text-blue-600">Home</a>
+                            <a className="font-figtree font-regular text-2xl hover:text-brandIndigo">Home</a>
                         </Link>
                     </li>
                     <li>
                         <Link legacyBehavior href="/">
-                            <a className="font-figtree font-regular text-2xl hover:text-blue-600">About</a>
+                            <a className="font-figtree font-regular text-2xl hover:text-brandIndigo">About</a>
                         </Link>
                     </li>
                     <li>
                         <Link legacyBehavior href="/legacy">
-                            <a className="font-figtree font-regular text-2xl hover:text-blue-600">Legacy</a>
+                            <a className="font-figtree font-regular text-2xl hover:text-brandIndigo">Legacy</a>
                         </Link>
                     </li>
                     <li>
                         <Link legacyBehavior href="/track-shipment">
-                            <a className="px-8 py-4 bg-transparent border border-blue-600 text-blue-600 font-semibold test-base hover:bg-blue-600 hover:text-white transition">
+                            <a className="px-8 py-4 bg-transparent border border-brandIndigo text-brandIndigo font-semibold test-base hover:bg-brandIndigo hover:text-white transition">
                                 Track Shipment
                             </a>
                         </Link>
