@@ -11,30 +11,35 @@ const FAQ = () => {
     // FAQs stored as an array of objects with question and answer
     const faqs = [
         {
-            question: "What is Lorem Ipsum?",
+            question: "What is Savani Transport?",
             answer:
-                "Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has been the industry's standard dummy text ever since the 1500s.",
+                "At Savani Transport, we pride ourselves on delivering top-notch transportation services. Our team is dedicated to ensuring your goods are transported safely and on time. With a fleet of modern vehicles and experienced drivers, we handle everything from local deliveries to long-distance logistics. Trust us to manage your transportation needs with professionalism and care.",
         },
         {
-            question: "Why do we use it?",
+            question: "How can I book a service with Savani Transport?",
             answer:
                 "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.",
         },
         {
-            question: "Where does it come from?",
+            question: "What areas do you serve? ",
             answer:
                 "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.",
         },
         {
-            question: "Where can I get some?",
+            question: "What types of vehicles do you use? ",
             answer:
                 "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.",
+        },
+        {
+            question: "How do you ensure the safety of my goods?",
+            answer:
+                "Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC.",
         },
     ];
 
     return (
         <div className="flex flex-col lg:flex-row gap-8 md:gap-10 md:w-full">
-            <h1 className="text-32 font-figtree md:text-40 font-semibold mb-6">
+            <h1 className="text-32 tracking-[-0.02em] font-figtree md:text-40 font-semibold mb-6">
                 Frequently Asked Questions
             </h1>
             <div className="space-y-2 flex-1">
@@ -44,19 +49,20 @@ const FAQ = () => {
                         className="border rounded-lg shadow-sm bg-secondary-bg-color"
                     >
                         <button
-                            className="flex justify-between items-center w-full px-8 py-4 text-left text-primary-text-color font-medium"
+                            className={`flex justify-between items-center w-full px-8 ${openIndex === index ? 'pb-2 pt-4' :'py-4'} text-left text-primary-text-color font-medium`}
                             onClick={() => toggleFAQ(index)}
                         >
-                            <span className="font-semibold font-figtree text-base">{faq.question}</span>
-                            <span
+                            <span className="font-semibold font-figtree tracking-[-0.02em] text-base">{faq.question}</span>
+                            {/* <span
                                 className={`transform transition-transform duration-300 ${openIndex === index ? "rotate-180" : ""
                                     }`}
                             >
                                 ▼
-                            </span>
+                            </span> */}
+                            <img src={`/assets/${openIndex === index ?'CaretUp.svg' :'CaretDown.svg'}`} alt="Caret Down Icon" />
                         </button>
                         {openIndex === index && (
-                            <div className="px-8 pb-4 text-sm text-primary-text-color-70 font-figtree text-base">
+                            <div className="px-8 pb-4 tracking-[-0.02em] text-sm text-primary-text-color-70 font-figtree text-base">
                                 {faq.answer}
                             </div>
                         )}

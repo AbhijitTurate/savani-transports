@@ -42,23 +42,29 @@ export default function Navbar() {
                         </Link>
                     </li>
                     <li>
-                        <Link legacyBehavior href="/">
+                        <Link legacyBehavior href="/about">
                             <a className="font-figtree font-regular text-2xl hover:text-brandIndigo">About</a>
                         </Link>
                     </li>
-                    <li>
+                    {/* <li>
                         <Link legacyBehavior href="/legacy">
                             <a className="font-figtree font-regular text-2xl hover:text-brandIndigo">Legacy</a>
                         </Link>
-                    </li>
+                    </li> */}
                 </ul>
                 {/* Button */}
                 <div className="hidden md:block">
-                    <Link legacyBehavior href="/track-shipment">
+                    {/* <Link legacyBehavior href="/track-shipment">
                         <a className="px-8 py-4 bg-transparent border border-brandIndigo text-brandIndigo font-semibold test-base hover:bg-brandIndigo hover:text-white transition">
                             Track Shipment
                         </a>
-                    </Link>
+                    </Link> */}
+                <button className="px-14 py-4 bg-transparent border border-brandIndigo text-brandIndigo font-semibold test-base hover:bg-brandIndigo hover:text-white transition">
+                    Contact Us
+                </button>
+                <button className="px-14 py-4 ml-4 bg-brandIndigo  border border-brandIndigo text-white font-semibold test-base hover:bg-transparent hover:text-brandIndigo transition">
+                    Book Now
+                </button>
                 </div>
             </div>
             {/* Mobile Button */}

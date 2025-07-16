@@ -8,6 +8,7 @@ import TransportSolutions from "./home/components/TransportSolutions";
 import ContactUsbanner from "./home/components/ContactUsbanner";
 import Awards from "./home/components/Awards";
 import HeroHomeSection from "./home/components/HeroHomeSection";
+import TrustedCompanies from "./home/components/TrustedCompanies";
 
 export default function Home() {
   return (
@@ -17,12 +18,13 @@ export default function Home() {
       <HeroHomeSection />
       </div>
       <div className="flex flex-col items-center justify-center gap-16 md:gap-[6.5rem] mx-8 md:mx-[5.25rem] my-16">
+        <TrustedCompanies />
         <TransportSolutions />
         <ContactUsbanner />
         <FAQ />
         <DirectorInfo />
         <Testimonials />
-        <Awards />
+        {/* <Awards /> */}
       </div>
       <Footer />
     </div>

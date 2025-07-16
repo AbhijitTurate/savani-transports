@@ -30,9 +30,13 @@ export default {
       fontSize: {
         "40": "40px", // Add custom font size
         "32": "32px",
+        "24": "24px",
+        "20": "20px",
       },
       letterSpacing: {
         "22": "0.22em", // 22% letter-spacing
+        "-2": "-0.02em", // -2% letter-spacing
+        "-4": "-0.04em",
       },
       animation: {
         scroll: 'scroll 50s linear infinite',

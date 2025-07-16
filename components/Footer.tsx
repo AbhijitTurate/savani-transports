@@ -24,15 +24,15 @@ export default function Footer() {
                         </a>
                     </li>
                     <li>
-                        <a href="/" className="hover:text-gray-400 font-figtree font-regular text-2xl">
+                        <a href="/about" className="hover:text-gray-400 font-figtree font-regular text-2xl">
                             About Us
                         </a>
                     </li>
-                    <li>
+                    {/* <li>
                         <a href="/legacy" className="hover:text-gray-400 font-figtree font-regular text-2xl">
                             Legacy
                         </a>
-                    </li>
+                    </li> */}
                     <li>
                         <a href="/track-shipment" className="hover:text-gray-400 font-figtree font-regular text-2xl">
                             Track Shipment
