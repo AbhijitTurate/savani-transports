@@ -62,9 +62,9 @@ export default function Navbar() {
                 <button className="px-14 py-4 bg-transparent border border-brandIndigo text-brandIndigo font-semibold test-base hover:bg-brandIndigo hover:text-white transition">
                     Contact Us
                 </button>
-                <button className="px-14 py-4 ml-4 bg-brandIndigo  border border-brandIndigo text-white font-semibold test-base hover:bg-transparent hover:text-brandIndigo transition">
+                {/* <button className="px-14 py-4 ml-4 bg-brandIndigo  border border-brandIndigo text-white font-semibold test-base hover:bg-transparent hover:text-brandIndigo transition">
                     Book Now
-                </button>
+                </button> */}
                 </div>
             </div>
             {/* Mobile Button */}

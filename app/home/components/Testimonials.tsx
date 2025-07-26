@@ -35,11 +35,11 @@ export default function Testimonials() {
             <h2 className="text-center text-2xl font-normal primary-text-color font-lexend md:text-40 mb-8 md:mb-20">
                 Here’s what our clients have to say
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-[6.5rem]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-[1.5rem]">
                 {testimonials.map((testimonial, index) => (
                     <div
                         key={index}
-                        className="flex flex-col items-start md:max-w-[19.75rem] md:w-auto "
+                        className="flex flex-col items-start md:max-w-[23.813rem] md:w-auto bg-gray-100 rounded-lg shadow-md px-8 py-10"
                     >
                         <p className="text-xl font-normal primary-text-color font-lexend mb-2">{testimonial.name}</p>
                         <p className="text-sm font-light primary-text-color font-lexend">{testimonial.designation}</p>
