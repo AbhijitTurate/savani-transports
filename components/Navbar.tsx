@@ -2,6 +2,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from 'next/image';
+import ContactButton from './ContactButton';
+
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
@@ -59,9 +61,9 @@ export default function Navbar() {
                             Track Shipment
                         </a>
                     </Link> */}
-                <button className="px-14 py-4 bg-transparent border border-brandIndigo text-brandIndigo font-semibold test-base hover:bg-brandIndigo hover:text-white transition">
+                <ContactButton variant="outline" size="md">
                     Contact Us
-                </button>
+                </ContactButton>
                 {/* <button className="px-14 py-4 ml-4 bg-brandIndigo  border border-brandIndigo text-white font-semibold test-base hover:bg-transparent hover:text-brandIndigo transition">
                     Book Now
                 </button> */}
@@ -91,6 +93,15 @@ export default function Navbar() {
                                 Track Shipment
                             </a>
                         </Link>
+                    </li>
+                    <li>
+                        <ContactButton 
+                            variant="outline" 
+                            size="sm"
+                            className="w-full"
+                        >
+                            Contact Us
+                        </ContactButton>
                     </li>
                 </ul>
             )

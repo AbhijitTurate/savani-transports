@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import ContactButton from '@/components/ContactButton';
 
 const ContactUsbanner = () => {
     return (
@@ -6,9 +7,9 @@ const ContactUsbanner = () => {
             <div className='flex flex-col items-start max-w-[526px]'>
                 <h1 className="font-figtree font-semibold tracking-[-0.02em] text-24 md:text-40 mb-4 md:mb-6">Delivering greatness with one of the best fleet.</h1>
                 <p className='text-lg mt-2 md:mt-6 text-primary-text-color tracking-[-0.02em] text-base font-figtree font-regular mb-8'>With our modern fleet of  vehicles we ensure smooth delivery across cities propelling your dreams forward</p>
-                <button className="px-14 py-4 bg-transparent border border-brandIndigo text-brandIndigo font-semibold text-base hover:bg-brandIndigo hover:text-white transition">
+                <ContactButton variant="outline" size="lg">
                     Contact Us
-                </button>
+                </ContactButton>
             </div>
             <img
                 src={`/assets/abouttruck.png`}

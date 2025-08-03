@@ -1,5 +1,8 @@
+'use client';
+
 import React from 'react';
-import Image from 'next/image'; // or <img /> if not using Next.js
+import Image from 'next/image';
+import ContactButton from '@/components/ContactButton';
 
 const HeroHomeSection = () => {
   return (
@@ -10,19 +13,19 @@ const HeroHomeSection = () => {
           <h1 className="font-figtree text-3xl md:text-5xl font-semibold primary-text-color">
             Savani Transports Pvt. Ltd. — Wherever With Care
           </h1>
-          {/* <button className="bg-brandIndigo text-white px-8 py-4 rounded font-semibold w-max mx-auto md:mx-0">
+          <ContactButton 
+            variant="primary" 
+            size="lg"
+            className="w-[288px] h-[72px] mx-auto md:mx-0"
+          >
             Get a quote
-          </button> */}
-                  <button className="w-[288px] h-[72px] bg-brandIndigo font-figtree text-white text-base font-regular rounded-[2px] flex items-center justify-center border border-brandIndigo hover:bg-white hover:text-brandIndigo">
-                      Get a quote
-                  </button>
-
+          </ContactButton>
         </div>
 
         {/* RIGHT IMAGE SECTION */}
         <div className="w-full md:w-[65%] flex justify-center">
           <img
-            src="/assets/herohome.png" // replace with actual path
+            src="/assets/herohome.png"
             alt="Savani Transport Truck"
             className="w-full h-auto rounded-[2rem] shadow-lg object-cover"
           />

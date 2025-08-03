@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Figtree, Lexend } from "next/font/google";
 import "./globals.css";
+import AppWrapper from "@/components/AppWrapper";
 
 const figtree = Figtree({
   subsets: ['latin'],
@@ -29,7 +30,9 @@ export default function RootLayout({
       <body
         className={`${figtree.variable} ${lexend.variable} antialiased`}
       >
-        {children}
+        <AppWrapper>
+          {children}
+        </AppWrapper>
       </body>
     </html>
   );
