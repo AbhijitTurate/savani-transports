@@ -78,22 +78,22 @@ export default function Navbar() {
                         </Link>
                     </li>
                     <li>
-                        <Link legacyBehavior href="/">
+                        <Link legacyBehavior href="/about">
                             <a className="font-figtree font-regular text-2xl hover:text-brandIndigo">About</a>
                         </Link>
                     </li>
-                    <li>
+                    {/* <li>
                         <Link legacyBehavior href="/legacy">
                             <a className="font-figtree font-regular text-2xl hover:text-brandIndigo">Legacy</a>
                         </Link>
-                    </li>
-                    <li>
+                    </li> */}
+                    {/* <li>
                         <Link legacyBehavior href="/track-shipment">
                             <a className="px-8 py-4 bg-transparent border border-brandIndigo text-brandIndigo font-semibold test-base hover:bg-brandIndigo hover:text-white transition">
                                 Track Shipment
                             </a>
                         </Link>
-                    </li>
+                    </li> */}
                     <li>
                         <ContactButton 
                             variant="outline" 

@@ -1,3 +1,5 @@
+import ContactButton from "@/components/ContactButton";
+
 export default function TransportSolutions() {
     return (
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-16">
@@ -9,9 +11,9 @@ export default function TransportSolutions() {
                 <p className="text-base font-figtree font-regular mb-8 tracking-[-0.02em]">
                     For over 80 years, Savani Transports Pvt. Ltd. has been a trusted leader in India’s logistics and transportation industry. With a network of 310+ branches and a fleet of modern vehicles, we provide seamless, secure, and efficient delivery solutions across diverse industries. Whether it’s bulk cargo, door-to-door delivery, or specialized logistics, we tailor our services to meet your unique needs.
                 </p>
-                <button className="px-14 py-4 bg-transparent border border-brandIndigo text-brandIndigo font-semibold test-base hover:bg-brandIndigo hover:text-white transition">
+                <ContactButton variant="outline" size="md">
                     Contact Us
-                </button>
+                </ContactButton>
             </div>
             {/* <div className="flex-shrink-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"> */}
             <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2">

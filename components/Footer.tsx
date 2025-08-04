@@ -1,3 +1,5 @@
+import ContactButton from "./ContactButton";
+
 export default function Footer() {
     return (
         <footer className="bg-black text-white mt-auto">
@@ -33,10 +35,15 @@ export default function Footer() {
                             Legacy
                         </a>
                     </li> */}
-                    <li>
+                    {/* <li>
                         <a href="/track-shipment" className="hover:text-gray-400 font-figtree font-regular text-2xl">
                             Track Shipment
                         </a>
+                    </li> */}
+                    <li>
+                        <ContactButton variant="outline" size="md">
+                            Contact Us
+                        </ContactButton>
                     </li>
                 </ul>
             </div>

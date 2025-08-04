@@ -14,7 +14,7 @@ import IndiaMapComponent from "./home/components/IndiaMapComponent";
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      <div className='w-screen h-screen bg-[#F6F9FF] flex flex-col gap-10'>
+      <div className='w-screen min-h-screen  bg-[#F6F9FF] flex flex-col gap-10'>
       <Navbar />
       <HeroHomeSection />
       </div>
