@@ -19,3 +19,17 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@media (max-width: 639px) {
+.service-grid > div:nth-child(even) {
+  background-color: #F6F8FF; /* Blue */
+}
+}  
+
+/* Desktop (2 columns) - checkerboard */
+@media (min-width: 640px) {
+  .service-grid > div:nth-child(2),
+  .service-grid > div:nth-child(3)  {
+    background-color:  #F6F8FF;
+  }
+}

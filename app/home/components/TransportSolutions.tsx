@@ -16,7 +16,7 @@ export default function TransportSolutions() {
                 </ContactButton>
             </div>
             {/* <div className="flex-shrink-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"> */}
-            <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2">
+            <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 service-grid">
                 {[
                     { title: "Diverse Logistics Solutions", description: "Road transport, warehousing, and supply chain solutions.", icon: "/assets/road.svg" },
                     { title: "Fast Paced", description: "Savani Transport gets your goods there faster—with optimized routes, real-time tracking, and zero unnecessary stops.", icon: "/assets/shield.svg" },
@@ -27,7 +27,7 @@ export default function TransportSolutions() {
                 ].map((service, index) => (
                     <div
                         key={index}
-                        className={`${(index === 1 || index === 2) ? 'bg-tertiary-bg-color' : ''}  p-4 lg:p-11 flex flex-col justify-center items-start gap-2.5`}
+                        className={`p-4 lg:p-11 flex flex-col justify-center items-start gap-2.5`}
                     >
                         <img
                             src={service.icon}
