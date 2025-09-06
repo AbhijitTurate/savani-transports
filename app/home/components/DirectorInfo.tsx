@@ -49,7 +49,7 @@ const DirectorInfo = () => {
                 <img
                     src={director.image}
                     alt="Director"
-                    className="rounded-xl shadow-lg w-full max-w-sm lg:max-w-full"
+                    className="shadow-lg w-full max-w-sm lg:max-w-full rounded-[40px]"
                 />
             </div>
         </section>

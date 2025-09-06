@@ -24,7 +24,7 @@ export default function Home() {
         <IndiaMapComponent />
         <ContactUsbanner />
         <FAQ />
-        <DirectorInfo />
+        {/* <DirectorInfo /> */}
         <Testimonials />
         {/* <Awards /> */}
       </div>

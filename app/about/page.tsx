@@ -5,6 +5,7 @@ import Navbar from '@/components/Navbar'
 import React from 'react'
 import AboutusBanner from './components/AboutusBanner'
 import Awards from './components/Awards'
+import DirectorInfo from '../home/components/DirectorInfo'
 
 
 const About = () => {
@@ -46,6 +47,10 @@ const About = () => {
             </div>
             <div className='flex flex-col md:flex-row mx-8 md:mx-[5.25rem] my-8 md:my-16 gap-8'>
                 {missionVisionData.map((item, index) => <MissionVision key={index} {...item} />)}
+            </div>
+
+            <div className="flex flex-col items-center justify-center gap-16 md:gap-[6.5rem] mx-8 md:mx-[5.25rem] my-16">
+                <DirectorInfo />
             </div>
             <Awards />
             <Footer />

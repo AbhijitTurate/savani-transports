@@ -48,35 +48,37 @@ const BlackLoadingScreen: React.FC<BlackLoadingScreenProps> = ({ onLoadingComple
           {/* Semi-circular gauge background */}
           <svg
             className="w-full h-auto"
-            viewBox="0 0 400 200"
+            viewBox="0 0 400 220"
             preserveAspectRatio="xMidYMid meet"
           >
             {/* Semi-circle background */}
             <path
-              d="M 40 160 A 160 160 0 0 1 360 160"
+              d="M 50 170 A 150 150 0 0 1 350 170"
               fill="none"
               stroke="#333"
-              strokeWidth="4"
+              strokeWidth="6"
+              strokeLinecap="round"
             />
             
             {/* Semi-circle progress */}
             <path
-              d="M 40 160 A 160 160 0 0 1 360 160"
+              d="M 50 170 A 150 150 0 0 1 350 170"
               fill="none"
               stroke="white"
-              strokeWidth="4"
-              strokeDasharray={`${(progress / 100) * 502.65} 502.65`}
+              strokeWidth="6"
+              strokeDasharray={`${(progress / 100) * 471.24} 471.24`}
               strokeDashoffset="0"
+              strokeLinecap="round"
               className="transition-all duration-200 ease-out"
             />
             
             {/* Tick marks */}
             {[...Array(21)].map((_, i) => {
               const angle = (i * 180 / 20) * (Math.PI / 180);
-              const x1 = 200 + 150 * Math.cos(angle);
-              const y1 = 160 - 150 * Math.sin(angle);
-              const x2 = 200 + (i % 5 === 0 ? 130 : 140) * Math.cos(angle);
-              const y2 = 160 - (i % 5 === 0 ? 130 : 140) * Math.sin(angle);
+              const x1 = 200 + 140 * Math.cos(angle);
+              const y1 = 170 - 140 * Math.sin(angle);
+              const x2 = 200 + (i % 5 === 0 ? 120 : 130) * Math.cos(angle);
+              const y2 = 170 - (i % 5 === 0 ? 120 : 130) * Math.sin(angle);
               
               return (
                 <line
@@ -87,6 +89,7 @@ const BlackLoadingScreen: React.FC<BlackLoadingScreenProps> = ({ onLoadingComple
                   y2={y2}
                   stroke="white"
                   strokeWidth={i % 5 === 0 ? "3" : "1.5"}
+                  strokeLinecap="round"
                 />
               );
             })}
