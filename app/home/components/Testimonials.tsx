@@ -31,7 +31,7 @@ export default function Testimonials() {
     ];
 
     return (
-        <section >
+        <section id="testimonials">
             <h2 className="text-center text-2xl font-normal primary-text-color font-lexend md:text-40 mb-8 md:mb-20">
                 Here’s what our clients have to say
             </h2>

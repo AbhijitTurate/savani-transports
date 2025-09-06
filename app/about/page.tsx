@@ -23,7 +23,7 @@ const About = () => {
 
     const aboutData = [
         {
-            imageName: 'aboutBanner1',
+            imageName: 'aboutBanner',
             title: 'Delivering Excellence Across India Since 1942',
             description: 'At Savani Transports Pvt Limited, we’re proud pioneers in surface transport, offering reliable, economic, and fast logistics solutions across the country. Established in 1942, we’ve dedicated over 80 years to moving cargo securely, efficiently, and with a focus on customer satisfaction. Today, with 310+ branches and a robust fleet of containerized trucks and LCVs, we ensure that our clients’ goods reach their destinations safely, no matter where they are.'
         },

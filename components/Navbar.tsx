@@ -48,11 +48,11 @@ export default function Navbar() {
                             <a className="font-figtree font-regular text-2xl hover:text-brandIndigo">About</a>
                         </Link>
                     </li>
-                    {/* <li>
-                        <Link legacyBehavior href="/legacy">
-                            <a className="font-figtree font-regular text-2xl hover:text-brandIndigo">Legacy</a>
+                    <li>
+                        <Link legacyBehavior href="/#testimonials">
+                            <a className="font-figtree font-regular text-2xl hover:text-brandIndigo">Testimonials</a>
                         </Link>
-                    </li> */}
+                    </li>
                 </ul>
                 {/* Button */}
                 <div className="hidden md:block">
@@ -82,11 +82,12 @@ export default function Navbar() {
                             <a className="font-figtree font-regular text-2xl hover:text-brandIndigo">About</a>
                         </Link>
                     </li>
-                    {/* <li>
-                        <Link legacyBehavior href="/legacy">
-                            <a className="font-figtree font-regular text-2xl hover:text-brandIndigo">Legacy</a>
+                    <li>
+                        <Link legacyBehavior href="/#testimonials">
+                            <a className="font-figtree font-regular text-2xl hover:text-brandIndigo">Testimonials</a>
                         </Link>
-                    </li> */}
+                    </li>
+
                     {/* <li>
                         <Link legacyBehavior href="/track-shipment">
                             <a className="px-8 py-4 bg-transparent border border-brandIndigo text-brandIndigo font-semibold test-base hover:bg-brandIndigo hover:text-white transition">
