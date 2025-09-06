@@ -3,15 +3,18 @@
 import Image from 'next/image';
 
 const companies = [
-  { name: 'Layers', logo: '/assets/company1.svg' },
-  { name: 'Quotient', logo: '/assets/company2.svg' },
-  { name: 'Sisyphus', logo: '/assets/company3.svg' },
-  { name: 'Hourglass', logo: '/assets/company4.svg' },
-  { name: 'Capsule', logo: '/assets/company5.svg' },
-  { name: 'Command+R', logo: '/assets/company6.svg' },
-  { name: 'Catalog', logo: '/assets/company7.svg' },
-  { name: 'GlobalBank', logo: '/assets/company8.svg' },
-  { name: 'Spherule', logo: '/assets/company9.svg' }
+  '/assets/company1.svg',
+  '/assets/company2.svg',
+  '/assets/company3.svg',
+  '/assets/company4.svg',
+  '/assets/company5.svg',
+  '/assets/company6.svg',
+  '/assets/company7.svg',
+  '/assets/company8.svg',
+  '/assets/company9.svg',
+  '/assets/company10.svg',
+  '/assets/company11.svg',
+  '/assets/company12.svg'
 ];
 
 const TrustedCompanies = () => {
@@ -29,23 +32,30 @@ const TrustedCompanies = () => {
         {/* Mobile Marquee Layout */}
         <div className="md:hidden w-full overflow-hidden">
           <div className="flex gap-8 animate-scroll min-w-fit flex-nowrap">
-            {repeatedCompanies.map((company, index) => (
-              <div key={index} className="flex flex-row gap-2 items-center opacity-60 shrink-0">
-                <img src={company.logo} alt={company.name} />
-                <span className="text-center text-lg font-normal font-lexend text-gray-500">{company.name}</span>
+            {repeatedCompanies.map((logo, index) => (
+              <div key={index} className="flex items-center opacity-60 shrink-0">
+                <img src={logo} alt={`Company ${index + 1}`} className="h-8 w-auto" />
               </div>
             ))}
           </div>
         </div>
 
-        {/* Desktop Grid Layout */}
-        <div className="hidden md:flex flex-col items-center gap-10">
-          {/* Row 1 - All items */}
-          <div className="flex flex-wrap justify-center gap-[88px]">
-            {companies.map((company, index) => (
-              <div key={index} className="flex flex-row gap-2 items-center opacity-60 hover:opacity-100 transition-opacity">
-                <img src={company.logo} alt={company.name} />
-                <span className="text-center text-2xl font-normal font-lexend text-gray-500">{company.name}</span>
+        {/* Desktop Grid Layout - Two rows as shown in Figma */}
+        <div className="hidden md:flex flex-col items-center gap-12">
+          {/* Row 1 - First 6 companies */}
+          <div className="flex justify-center items-center gap-16">
+            {companies.slice(0, 6).map((logo, index) => (
+              <div key={index} className="flex items-center opacity-60 hover:opacity-100 transition-opacity">
+                <img src={logo} alt={`Company ${index + 1}`} className="h-12 w-auto" />
+              </div>
+            ))}
+          </div>
+          
+          {/* Row 2 - Remaining companies */}
+          <div className="flex justify-center items-center gap-16">
+            {companies.slice(6).map((logo, index) => (
+              <div key={index + 6} className="flex items-center opacity-60 hover:opacity-100 transition-opacity">
+                <img src={logo} alt={`Company ${index + 7}`} className="h-12 w-auto" />
               </div>
             ))}
           </div>

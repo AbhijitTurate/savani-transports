@@ -1,9 +1,24 @@
 import React from 'react'
 
 const DirectorInfo = () => {
+    const directorInfo = [
+    {
+        image: '/assets/director1.png',
+        description: 'At Savani Transport, we pride ourselves on delivering exceptional logistics solutions tailored to our clients\' needs. As the director, I have witnessed our team\'s dedication to innovation and efficiency firsthand. Our fleet is equipped with the latest technology, ensuring timely deliveries and safe handling of goods. We believe in building strong relationships with our partners and customers, which has been the cornerstone of our success. Together, we are not just moving cargo; we are moving businesses forward.'
+    },
+    {
+        image: '/assets/director2.png',
+        description: 'At Savani Transport, we pride ourselves on delivering exceptional logistics solutions tailored to our clients\' needs. As the director, I have witnessed our team\'s dedication to innovation and efficiency firsthand. Our fleet is equipped with the latest technology, ensuring timely deliveries and safe handling of goods. We believe in building strong relationships with our partners and customers, which has been the cornerstone of our success. Together, we are not just moving cargo; we are moving businesses forward.'
+    }
+    ]
+
     return (
 
-        <section className="flex flex-col-reverse lg:flex-row items-center gap-8 md:gap-[9.75rem] mx-auto">
+        directorInfo.map((director, index) => {
+            const shouldReverse = index % 2 != 0
+            console.log('shouldReverse:::', shouldReverse)
+            // const updatedItemObject = { ...director, reverse: shouldReverse }
+            return <section className={`flex flex-col-reverse lg:flex-row items-center gap-8 md:gap-[9.75rem] mx-auto ${shouldReverse ? "lg:flex-row-reverse" : ""}`}>
             {/* Text Content */}
             <div className='md: max-w-[806px]'>
                 <img src="/assets/director-qoute.svg" alt="Quote" className="mb-6 w-20 h-20 md:w-[6.75rem] md:h-[6.75rem]" />
@@ -32,13 +47,14 @@ const DirectorInfo = () => {
             {/* Image */}
             <div className="flex justify-center">
                 <img
-                    src="/assets/director.png"
+                    src={director.image}
                     alt="Director"
                     className="rounded-xl shadow-lg w-full max-w-sm lg:max-w-full"
                 />
             </div>
         </section>
-    );
+    }))
+   
 }
 
 export default DirectorInfo

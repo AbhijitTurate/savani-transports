@@ -41,7 +41,7 @@ export default function Footer() {
                         </a>
                     </li> */}
                     <li>
-                        <ContactButton variant="outline" size="md">
+                        <ContactButton variant="primary" size="md">
                             Contact Us
                         </ContactButton>
                     </li>

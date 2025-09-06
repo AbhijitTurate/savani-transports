@@ -41,7 +41,7 @@ const BlackLoadingScreen: React.FC<BlackLoadingScreenProps> = ({ onLoadingComple
   if (!isMounted || !isVisible) return null;
 
   return (
-    <div className="fixed inset-0 z-50 bg-black flex items-center justify-center p-4">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ backgroundColor: '#515585' }}>
       <div className="text-center w-full max-w-4xl">
         {/* Speedometer */}
         <div className="relative w-full max-w-2xl mx-auto">
@@ -59,16 +59,16 @@ const BlackLoadingScreen: React.FC<BlackLoadingScreenProps> = ({ onLoadingComple
               strokeWidth="4"
             />
             
-                         {/* Semi-circle progress - shorter to avoid overlapping text */}
-             <path
-               d="M 40 160 A 160 160 0 0 1 360 160"
-               fill="none"
-               stroke="white"
-               strokeWidth="4"
-               strokeDasharray={`${(progress / 100) * 400} 502`}
-               strokeDashoffset="0"
-               className="transition-all duration-200 ease-out"
-             />
+            {/* Semi-circle progress */}
+            <path
+              d="M 40 160 A 160 160 0 0 1 360 160"
+              fill="none"
+              stroke="white"
+              strokeWidth="4"
+              strokeDasharray={`${(progress / 100) * 502.65} 502.65`}
+              strokeDashoffset="0"
+              className="transition-all duration-200 ease-out"
+            />
             
             {/* Tick marks */}
             {[...Array(21)].map((_, i) => {
