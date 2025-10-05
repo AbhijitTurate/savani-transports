@@ -1,6 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
+import emailjs from '@emailjs/browser';
+import { toast } from 'react-toastify';
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -14,6 +17,8 @@ interface FormData {
   message: string;
 }
 
+const SITE_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!; // Must start with NEXT_PUBLIC_
+
 const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState<FormData>({
     name: '',
@@ -23,6 +28,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const industries = [
     'Select',
@@ -39,10 +45,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   const validateForm = () => {
@@ -55,40 +58,61 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    const captchaValue= recaptchaRef.current?.getValue()
     
-    if (!validateForm()) {
-      alert('Please fill in all fields correctly');
-      return;
+    if (
+      !(
+        validateForm() &&
+        captchaValue
+      )
+    ) {
+     
+      const errorMessage  = !captchaValue?"Please fill in the captcha":"Please fill required details in proper format"
+      toast(errorMessage,{
+        type: "error",
+      })
+      return
     }
+
+    recaptchaRef.current?.reset();
 
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      // Send email using EmailJS
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        industry: formData.industry,
+        message: formData.message,
+        to_email: 'abhidoinstudy@gmail.com',
+        reply_to: formData.email,
+      };
 
-      if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Failed to submit form');
-      }
+      const result = await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
 
+      toast("Successfully submitted details.Thank you!",{
+        type: "success"
+      })
+      console.log('Email sent successfully:::', result);
       setSubmitStatus('success');
       setFormData({ name: '', email: '', industry: '', message: '' });
       
-      // Close modal after 2 seconds
+      // Delay closing the modal to allow toast to appear
       setTimeout(() => {
         onClose();
         setSubmitStatus('idle');
-      }, 2000);
+      }, 1000);
       
     } catch (error) {
-      console.error('Error submitting form:', error);
+      console.error('Error sending email:', error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -138,7 +162,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">E-mail</p>
-                    <p className="font-medium">contact@savanitransports.com</p>
+                    <p className="font-medium">info@savani.in</p>
                   </div>
                 </div>
                 
@@ -150,7 +174,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Phone number</p>
-                    <p className="font-medium">+91-XXXXXXXXXX</p>
+                    <p className="font-medium">022-43540000</p>
                   </div>
                 </div>
               </div>
@@ -227,6 +251,11 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                   required
                 />
               </div>
+
+              <ReCAPTCHA
+                ref={recaptchaRef}
+                sitekey={SITE_KEY}
+              />
 
               <button
                 type="submit"

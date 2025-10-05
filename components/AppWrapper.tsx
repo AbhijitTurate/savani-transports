@@ -5,6 +5,8 @@ import { LoadingProvider, useLoading } from './LoadingContext';
 import { ContactModalProvider, useContactModal } from './ContactModalContext';
 import BlackLoadingScreen from './BlackLoadingScreen';
 import ContactModal from './ContactModal';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // Inner component that uses both contexts
 const AppInner: React.FC = () => {
@@ -19,6 +21,11 @@ const AppInner: React.FC = () => {
       <ContactModal 
         isOpen={isContactModalOpen} 
         onClose={closeContactModal} 
+      />
+      <ToastContainer 
+        position="bottom-center"
+        autoClose={5000}
+        closeOnClick
       />
     </>
   );

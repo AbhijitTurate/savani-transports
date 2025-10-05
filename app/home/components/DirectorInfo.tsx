@@ -16,7 +16,6 @@ const DirectorInfo = () => {
 
         directorInfo.map((director, index) => {
             const shouldReverse = index % 2 != 0
-            console.log('shouldReverse:::', shouldReverse)
             // const updatedItemObject = { ...director, reverse: shouldReverse }
             return <section className={`flex flex-col-reverse lg:flex-row items-center gap-8 md:gap-[9.75rem] mx-auto ${shouldReverse ? "lg:flex-row-reverse" : ""}`}>
             {/* Text Content */}
