@@ -25,9 +25,9 @@ const FooterBillboard = () => {
               
               <div>
                 <ContactButton 
-                  variant="primary" 
+                  variant="primary_white" 
                   size="lg"
-                  className="bg-white text-[#515585] hover:bg-gray-100 w-[288px] h-[72px] mx-auto md:mx-0"
+                  className="w-[288px] h-[72px] mx-auto md:mx-0"
                 >
                   Get a quote
                 </ContactButton>

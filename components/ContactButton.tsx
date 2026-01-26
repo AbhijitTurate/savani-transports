@@ -6,7 +6,7 @@ import { useContactModal } from './ContactModalContext';
 interface ContactButtonProps {
   children: React.ReactNode;
   className?: string;
-  variant?: 'primary' | 'secondary' | 'outline';
+  variant?: 'primary' | 'secondary' | 'outline' | 'primary_white';
   size?: 'sm' | 'md' | 'lg';
 }
 
@@ -22,6 +22,7 @@ const ContactButton: React.FC<ContactButtonProps> = ({
   
   const variantClasses = {
     primary: 'bg-brandIndigo text-white hover:bg-white hover:text-brandIndigo hover:border-brandIndigo hover:border',
+    primary_white: 'bg-white text-brandIndigo hover:bg-brandIndigo hover:text-white hover:border-white hover:border',
     secondary: 'bg-gray-600 text-white hover:bg-gray-700',
     outline: 'bg-transparent border border-brandIndigo text-brandIndigo hover:bg-brandIndigo hover:text-white'
   };

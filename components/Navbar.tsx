@@ -39,24 +39,24 @@ export default function Navbar() {
                 </button>
                 <ul className={`hidden md:flex gap-20 text-lg`}>
                     <li>
-                        <Link legacyBehavior href="/">
-                            <a className="font-figtree font-regular text-2xl hover:text-brandIndigo">Home</a>
+                        <Link className="font-figtree font-regular text-2xl hover:text-brandIndigo" href="/">
+                            Home
                         </Link>
                     </li>
                     <li>
-                        <Link legacyBehavior href="/about">
-                            <a className="font-figtree font-regular text-2xl hover:text-brandIndigo">About</a>
+                        <Link className="font-figtree font-regular text-2xl hover:text-brandIndigo" href="/about">
+                            About
                         </Link>
                     </li>
                     <li>
-                        <Link legacyBehavior href="/#testimonials">
-                            <a className="font-figtree font-regular text-2xl hover:text-brandIndigo">Testimonials</a>
+                        <Link className="font-figtree font-regular text-2xl hover:text-brandIndigo" href="/#testimonials">
+                            Testimonials
                         </Link>
                     </li>
                 </ul>
                 {/* Button */}
                 <div className="hidden md:block">
-                    {/* <Link legacyBehavior href="/track-shipment">
+                    {/* <Link className="font-figtree font-regular text-2xl hover:text-brandIndigo"  href="/track-shipment">
                         <a className="px-8 py-4 bg-transparent border border-brandIndigo text-brandIndigo font-semibold test-base hover:bg-brandIndigo hover:text-white transition">
                             Track Shipment
                         </a>
@@ -73,28 +73,22 @@ export default function Navbar() {
             {isOpen && (
                 <ul className={`md:hidden flex flex-col justify-center items-center gap-16 my-4 list-none`}>
                     <li>
-                        <Link legacyBehavior href="/">
-                            <a className="font-figtree font-regular text-2xl hover:text-brandIndigo">Home</a>
+                        <Link className="font-figtree font-regular text-2xl hover:text-brandIndigo"  href="/">
+                            Home
                         </Link>
                     </li>
                     <li>
-                        <Link legacyBehavior href="/about">
-                            <a className="font-figtree font-regular text-2xl hover:text-brandIndigo">About</a>
+                        <Link className="font-figtree font-regular text-2xl hover:text-brandIndigo"  href="/about">
+                            About
                         </Link>
                     </li>
                     <li>
-                        <Link legacyBehavior href="/#testimonials">
-                            <a className="font-figtree font-regular text-2xl hover:text-brandIndigo">Testimonials</a>
+                        <Link className="font-figtree font-regular text-2xl hover:text-brandIndigo"  href="/#testimonials">
+                            Testimonials
                         </Link>
                     </li>
 
-                    {/* <li>
-                        <Link legacyBehavior href="/track-shipment">
-                            <a className="px-8 py-4 bg-transparent border border-brandIndigo text-brandIndigo font-semibold test-base hover:bg-brandIndigo hover:text-white transition">
-                                Track Shipment
-                            </a>
-                        </Link>
-                    </li> */}
+
                     <li>
                         <ContactButton 
                             variant="outline" 

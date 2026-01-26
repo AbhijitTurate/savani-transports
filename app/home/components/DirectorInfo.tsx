@@ -22,7 +22,7 @@ const DirectorInfo = () => {
         directorInfo.map((director, index) => {
             const shouldReverse = index % 2 != 0
             // const updatedItemObject = { ...director, reverse: shouldReverse }
-            return <section className={`flex flex-col-reverse lg:flex-row items-center gap-8 md:gap-[9.75rem] mx-auto ${shouldReverse ? "lg:flex-row-reverse" : ""}`}>
+            return <section key={index} className={`flex flex-col-reverse lg:flex-row items-center gap-8 md:gap-[9.75rem] mx-auto ${shouldReverse ? "lg:flex-row-reverse" : ""}`}>
             {/* Text Content */}
             <div className='md: max-w-[806px]'>
                 <img src="/assets/director-qoute.svg" alt="Quote" className="mb-6 w-20 h-20 md:w-[6.75rem] md:h-[6.75rem]" />
