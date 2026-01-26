@@ -6,6 +6,7 @@ import React from 'react'
 import AboutusBanner from './components/AboutusBanner'
 import Awards from './components/Awards'
 import DirectorInfo from '../home/components/DirectorInfo'
+import AboutFounder from './components/AboutFounder'
 
 
 const About = () => {
@@ -23,16 +24,21 @@ const About = () => {
 
     const aboutData = [
         {
-            imageName: 'aboutBanner',
-            title: 'Delivering Excellence Across India Since 1942',
-            description: 'At Savani Transports Pvt Limited, we’re proud pioneers in surface transport, offering reliable, economic, and fast logistics solutions across the country. Established in 1942, we’ve dedicated over 80 years to moving cargo securely, efficiently, and with a focus on customer satisfaction. Today, with 310+ branches and a robust fleet of containerized trucks and LCVs, we ensure that our clients’ goods reach their destinations safely, no matter where they are.'
+            imageName: 'aboutusbanner',
+            title: 'About Savani Transports Private Limited.',
+            description: `Savani Transports Private Limited is one of India’s pioneering and most trusted transport companies, serving businesses across the country for over 80 years.
+
+As a family managed enterprise, Savani has been built on long-term relationships, ethical business practices, and a deep understanding of India’s transport ecosystem. Over the decades, we have supported the growth of industries by ensuring safe, timely, and efficient movement of goods across the nation.
+
+Today, Savani Transports operates through a network of over 70 branches and franchises across India, offering comprehensive road transport solutions to businesses of all sizes. We serve a wide range of industries including textiles, pharmaceuticals, chemicals, FMCG, automotive, engineering, and manufacturing.`
         },
-        {
-            imageName: 'aboutBanner2',
-            title: 'A Legacy of Trust and Innovation',
-            description: 'Our journey is marked by milestones that underscore our commitment to growth and excellence. We celebrated our Silver Jubilee in 1967, with 101 branches across India. A decade later, in 1977, we’d expanded to 201 branches. Our Golden Jubilee in 1992 and Diamond Jubilee in 2002 were celebrated with an even stronger network and fleet, and today, we continue to push boundaries, ensuring every cargo is handled with precision and care.'
-        }
+       
     ]
+    const aboutData2 = [ {
+        imageName: 'aboutBanner2',
+        title: 'Our Legacy and Foundation',
+        description: 'Founded in 1942, Savani Transports Private Limited has grown from its early beginnings as a railway agency into a pan-India logistics network, known for reliability, consistency, and care.\n\nThe foundation of Savani Transports was laid by Shri Vadilal Nathubhai Savani and Shri Tarachand Nathubhai Savani, whose vision and determination helped establish a dependable transport operation during a time when infrastructure and logistics systems in India were still evolving.\n\nThe company was later expanded under the leadership of Shri Maneklal V. Savani who was the main spirit behind the success, he played a pivotal role in transforming Savani into one of India\'s early nationwide transport networks. His leadership strengthened the company\'s values of discipline, service excellence, and social responsibility principles that continue to guide Savani today.'
+    }]
     return (
         <div className='flex flex-col min-h-screen '>
             <Navbar />
@@ -45,6 +51,9 @@ const About = () => {
                     return <AboutusBanner key={index} {...updatedItemObject} />
                 })}
             </div>
+            <div className='flex flex-col px-8 md:px-[5.25rem] my-8 md:my-16 gap-14 bg-gray-100'>
+                <AboutFounder />
+            </div>
             <div className='flex flex-col md:flex-row mx-8 md:mx-[5.25rem] my-8 md:my-16 gap-8'>
                 {missionVisionData.map((item, index) => <MissionVision key={index} {...item} />)}
             </div>
@@ -53,6 +62,9 @@ const About = () => {
                 <DirectorInfo />
             </div>
             <Awards />
+            <div className='flex flex-col mx-8 md:mx-[5.25rem] my-8 md:my-16 gap-14'>
+            {aboutData2.map((item, index) => <AboutusBanner key={index} {...item} reverse={true} />)}
+            </div>
             <Footer />
         </div>
     )

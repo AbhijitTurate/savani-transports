@@ -1,12 +1,11 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
 import ContactButton from '@/components/ContactButton';
 
 const HeroHomeSection = () => {
   return (
-    <section className="w-screen bg-[#F6F9FF] py-16 px-6 md:px-20">
+    <section className="w-screen bg-[#E4F1FA] py-16 px-6 md:px-20">
       <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-10">
         {/* LEFT TEXT SECTION */}
         <div className="flex flex-col gap-6 max-w-xl text-center md:text-left">
@@ -25,7 +24,7 @@ const HeroHomeSection = () => {
         {/* RIGHT IMAGE SECTION */}
         <div className="w-full md:w-[65%] flex justify-center">
           <img
-            src="/assets/herohome.png"
+            src="/assets/herohome_new.png"
             alt="Savani Transport Truck"
             className="w-full h-auto rounded-[2rem] shadow-lg object-cover"
           />

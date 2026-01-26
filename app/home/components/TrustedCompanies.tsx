@@ -3,18 +3,18 @@
 import Image from 'next/image';
 
 const companies = [
-  '/assets/company1.svg',
-  '/assets/company2.svg',
-  '/assets/company3.svg',
-  '/assets/company4.svg',
-  '/assets/company5.svg',
-  '/assets/company6.svg',
-  '/assets/company7.svg',
-  '/assets/company8.svg',
+  '/assets/company12.svg',
+  '/assets/company11.svg',
   '/assets/company9.svg',
   '/assets/company10.svg',
-  '/assets/company11.svg',
-  '/assets/company12.svg'
+  '/assets/company8.svg',
+  '/assets/company7.svg',
+  '/assets/company6.svg',
+  '/assets/company5.svg',
+  '/assets/company4.svg',
+  '/assets/company3.svg',
+  '/assets/company2.svg',
+  '/assets/company1.svg'
 ];
 
 const TrustedCompanies = () => {
@@ -45,7 +45,7 @@ const TrustedCompanies = () => {
           {/* Row 1 - First 6 companies */}
           <div className="flex justify-center items-center gap-16">
             {companies.slice(0, 6).map((logo, index) => (
-              <div key={index} className="flex items-center opacity-60 hover:opacity-100 transition-opacity">
+              <div key={index} className="flex items-center ">
                 <img src={logo} alt={`Company ${index + 1}`} className="h-12 w-auto" />
               </div>
             ))}
@@ -54,7 +54,7 @@ const TrustedCompanies = () => {
           {/* Row 2 - Remaining companies */}
           <div className="flex justify-center items-center gap-16">
             {companies.slice(6).map((logo, index) => (
-              <div key={index + 6} className="flex items-center opacity-60 hover:opacity-100 transition-opacity">
+              <div key={index + 6} className="flex items-center">
                 <img src={logo} alt={`Company ${index + 7}`} className="h-12 w-auto" />
               </div>
             ))}

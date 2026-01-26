@@ -80,39 +80,31 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
     setIsSubmitting(true);
     setSubmitStatus('idle');
 
+    console.log('Form data::::', formData);
     try {
-      // Send email using EmailJS
-      const templateParams = {
-        from_name: formData.name,
-        from_email: formData.email,
-        industry: formData.industry,
-        message: formData.message,
-        to_email: 'abhidoinstudy@gmail.com',
-        reply_to: formData.email,
-      };
+      // ⬇️ CALL NEXT.JS API ROUTE
+      const response = await fetch("/api/contact", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-      const result = await emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
-        templateParams,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
-      );
+      if (!response.ok) {
+        throw new Error("Failed to send email");
+      }
 
-      toast("Successfully submitted details.Thank you!",{
-        type: "success"
-      })
-      console.log('Email sent successfully:::', result);
+      toast("Successfully submitted details. Thank you!", { type: "success" });
       setSubmitStatus('success');
       setFormData({ name: '', email: '', industry: '', message: '' });
-      
-      // Delay closing the modal to allow toast to appear
+
       setTimeout(() => {
         onClose();
         setSubmitStatus('idle');
       }, 1000);
-      
     } catch (error) {
-      console.error('Error sending email:', error);
+      console.error("Error submitting form:", error);
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
