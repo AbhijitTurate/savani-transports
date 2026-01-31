@@ -1,6 +1,8 @@
-import ContactButton from "./ContactButton";
+"use client";
+import { useContactModal } from "./ContactModalContext";
 
 export default function Footer() {
+    const { openContactModal } = useContactModal();
     return (
         <footer className="bg-black text-white mt-auto">
             <div className="flex flex-col md:flex-row gap-12 md:gap-[12.375rem] items-center justify-between mx-8 md:mx-[5.25rem] my-8">
@@ -19,9 +21,9 @@ export default function Footer() {
                 </div>
 
                 {/* Navigation Links */}
-                <ul className="flex flex-col md:flex-row gap-4 md:gap-20 items-center space-y-4 md:space-y-0 md:space-x-8 w-full md:w-1/2 text-lg mt-6 md:mt-0">
+                <ul className="flex flex-row flex-wrap gap-x-4 md:gap-x-8 gap-y-2 items-center justify-center md:justify-start w-full md:w-1/2 text-lg mt-6 md:mt-0">
                     <li>
-                        <a href="/" className="hover:text-gray-400 font-figtree font-regular text-2xl">
+                        <a href="/" className="hover:text-gray-400 font-figtree font-regular text-2xl whitespace-nowrap">
                             Home
                         </a>
                     </li>
@@ -30,21 +32,26 @@ export default function Footer() {
                             About Us
                         </a>
                     </li>
-                    {/* <li>
-                        <a href="/legacy" className="hover:text-gray-400 font-figtree font-regular text-2xl">
-                            Legacy
-                        </a>
-                    </li> */}
-                    {/* <li>
-                        <a href="/track-shipment" className="hover:text-gray-400 font-figtree font-regular text-2xl">
-                            Track Shipment
-                        </a>
-                    </li> */}
                     <li>
+                        <a href="/about#legacy" className="hover:text-gray-400 font-figtree font-regular text-2xl whitespace-nowrap">
+                            legacy
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/our-services" className="hover:text-gray-400 font-figtree font-regular text-2xl whitespace-nowrap">
+                            Our Services
+                        </a>
+                    </li>
+                    <li>
+                        <button onClick={openContactModal} className="hover:text-gray-400 font-figtree font-regular text-2xl whitespace-nowrap">
+                           Contact Us
+                        </button>
+                    </li>
+                    {/* <li>
                         <ContactButton variant="primary" size="md">
                             Contact Us
                         </ContactButton>
-                    </li>
+                    </li> */}
                 </ul>
             </div>
         </footer>

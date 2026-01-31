@@ -45,12 +45,17 @@ export default function Navbar() {
                     </li>
                     <li>
                         <Link className="font-figtree font-regular text-2xl hover:text-brandIndigo" href="/about">
-                            About
+                            About Us
                         </Link>
                     </li>
                     <li>
                         <Link className="font-figtree font-regular text-2xl hover:text-brandIndigo" href="/#testimonials">
                             Testimonials
+                        </Link>
+                    </li>
+                    <li>
+                        <Link className="font-figtree font-regular text-2xl hover:text-brandIndigo" href="/our-services">
+                            Our Services
                         </Link>
                     </li>
                 </ul>
@@ -79,7 +84,7 @@ export default function Navbar() {
                     </li>
                     <li>
                         <Link className="font-figtree font-regular text-2xl hover:text-brandIndigo"  href="/about">
-                            About
+                        About Us
                         </Link>
                     </li>
                     <li>
@@ -87,7 +92,11 @@ export default function Navbar() {
                             Testimonials
                         </Link>
                     </li>
-
+                    <li>
+                        <Link className="font-figtree font-regular text-2xl hover:text-brandIndigo"  href="/our-services">
+                            Our Services
+                        </Link>
+                    </li>
 
                     <li>
                         <ContactButton 

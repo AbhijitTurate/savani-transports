@@ -9,9 +9,14 @@ const HeroHomeSection = () => {
       <div className="flex flex-col-reverse md:flex-row items-center justify-between gap-10">
         {/* LEFT TEXT SECTION */}
         <div className="flex flex-col gap-6 max-w-xl text-center md:text-left">
+          <div>
           <h1 className="font-figtree text-3xl md:text-5xl font-semibold primary-text-color">
-            Savani Transports Pvt. Ltd. — Wherever With Care
+          Savani Transports -
           </h1>
+          <h1 className='font-figtree text-3xl md:text-5xl font-semibold primary-text-color italic'>
+          Wherever With Care
+          </h1>
+          </div>
           <ContactButton 
             variant="primary" 
             size="lg"

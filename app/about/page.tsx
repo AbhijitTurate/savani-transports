@@ -7,6 +7,7 @@ import AboutusBanner from './components/AboutusBanner'
 import Awards from './components/Awards'
 import DirectorInfo from '../home/components/DirectorInfo'
 import AboutFounder from './components/AboutFounder'
+import FooterBillboard from '../home/components/FooterBillboard'
 
 
 const About = () => {
@@ -64,6 +65,9 @@ Today, Savani Transports operates through a network of over 70 branches and fran
             <Awards />
             <div className='flex flex-col mx-8 md:mx-[5.25rem] my-8 md:my-16 gap-14'>
             {aboutData2.map((item, index) => <AboutusBanner key={index} {...item} reverse={true} />)}
+            </div>
+            <div className='flex flex-col mx-8 md:mx-[5.25rem] my-8 md:my-16'>
+                <FooterBillboard />
             </div>
             <Footer />
         </div>

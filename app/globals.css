@@ -26,10 +26,40 @@ body {
 }
 }  
 
-/* Desktop (2 columns) - checkerboard */
+/* Desktop (3 columns) - checkerboard */
 @media (min-width: 640px) {
   .service-grid > div:nth-child(2),
-  .service-grid > div:nth-child(3)  {
+  .service-grid > div:nth-child(4),
+  .service-grid > div:nth-child(6)  {
     background-color:  #F6F8FF;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 50s linear infinite;
+}
+
+.animation-paused {
+  animation-play-state: paused !important;
+}
+
+/* Mobile-only icon color filters for WhySavaniTransport */
+.icon-calendar-mobile {
+  filter: brightness(0) invert(1);
+}
+
+.icon-workforce-mobile {
+  filter: brightness(0) saturate(100%) invert(27%) sepia(96%) saturate(1234%) hue-rotate(210deg) brightness(98%) contrast(96%);
+}
+
+@media (min-width: 768px) {
+  .icon-calendar-mobile,
+  .icon-workforce-mobile {
+    filter: none;
   }
 }

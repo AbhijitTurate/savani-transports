@@ -1,10 +1,43 @@
 import ContactButton from "@/components/ContactButton";
 
 export default function TransportSolutions() {
+    const services = [
+        {
+            title: "FTL (Full Truck Load)",
+            description: "Entire truck booked, faster delivery, ideal for bulk business consignments",
+            icon: "/assets/truck-loaded.svg"
+        },
+        {
+            title: "PTL (Part Truck Load)",
+            description: "Share truck space, cost-effective option for medium or small shipments",
+            icon: "/assets/truck.svg"
+        },
+        {
+            title: "SRL (Surface Rail Logistics)",
+            description: "Rail transport for heavy goods, economical, reliable for long distances",
+            icon: "/assets/rail-road.svg"
+        },
+        {
+            title: "Parcel Delivery System",
+            description: "Small packages delivered safely, affordable, suitable for individuals and businesses",
+            icon: "/assets/solar-box.svg"
+        },
+        {
+            title: "Door to Door Service",
+            description: "Savani Transport ensures your package's safety with secure packaging and tracking.",
+            icon: "/assets/door-open.svg"
+        },
+        {
+            title: "Custom Booking",
+            description: "Tailor transport as per cargo, route, timing and budget",
+            icon: "/assets/Ruler.svg"
+        }
+    ];
+
     return (
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-16">
             {/* Left Section */}
-            <div className="w-auto min-w-0 max-w-[820px]">
+            {/* <div className="w-auto min-w-0 max-w-[820px]">
                 <h1 className="text-40 font-semibold font-figtree text-primary-text-color mb-4 md:mb-6 tracking-[-0.02em]">
                     Comprehensive Transport Solutions
                 </h1>
@@ -14,20 +47,13 @@ export default function TransportSolutions() {
                 <ContactButton variant="outline" size="md">
                     Contact Us
                 </ContactButton>
-            </div>
+            </div> */}
             {/* <div className="flex-shrink-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"> */}
-            <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 service-grid">
-                {[
-                    { title: "Diverse Logistics Solutions", description: "Road transport, warehousing, and supply chain solutions.", icon: "/assets/road.svg" },
-                    { title: "Fast Paced", description: "Savani Transport gets your goods there faster—with optimized routes, real-time tracking, and zero unnecessary stops.", icon: "/assets/shield.svg" },
-                    { title: "Nationwide Network ", description: "310+ branches ensuring smooth connectivity across India.", icon: "/assets/india_flag.png" },
-                    { title: "Secure Delivery", description: "Savani Transport ensures your package's safety with secure packaging and tracking.", icon: "/assets/shield.svg" },
-                    // { title: "Service 2", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", icon: "/assets/speed.svg" },
-                    // { title: "Service 2", description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.", icon: "/assets/road.svg" },
-                ].map((service, index) => (
+            <div className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 service-grid">
+            {services.map((service, index) => (
                     <div
                         key={index}
-                        className={`p-4 lg:p-11 flex flex-col justify-center items-start gap-2.5`}
+                        className={`p-4 lg:p-11 flex flex-col justify-center items-start gap-3`}
                     >
                         <img
                             src={service.icon}
@@ -44,6 +70,5 @@ export default function TransportSolutions() {
                 ))}
             </div>
         </div>
-
     );
 }

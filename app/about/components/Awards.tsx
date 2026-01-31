@@ -13,7 +13,7 @@ const Awards = () => {
   const repeatedImages = [...awardImages, ...awardImages, ...awardImages];
 
   return (
-    <section className="relative w-screen overflow-x-hidden py-10  bg-white">
+    <section id="legacy" className="relative w-screen overflow-x-hidden py-10  bg-white">
       <h2 className="text-center text-2xl font-normal primary-text-color font-lexend md:text-4xl mb-10">
         Awards and Legacy
       </h2>

@@ -87,7 +87,7 @@ const IndiaMapComponent = () => {
             </div>
             <div className='flex flex-col items-start max-w-[680px]'>
                 <h1 className="font-figtree font-semibold tracking-[-0.02em] text-24 md:text-40 leading-none">Savani Transports is committed to delivering excellence throughout India.</h1>
-                <p className='text-lg mt-2  text-primary-text-color tracking-[-0.02em] text-base font-figtree font-regular'>With over 310 branches and a cutting-edge fleet, Savani Transports guarantees quick and secure delivery to every part of India.</p>
+                <p className='text-lg mt-2  text-primary-text-color tracking-[-0.02em] text-base font-figtree font-regular'>With over 70 branches, Savani Transports guarantees quick and secure delivery to every part of India.</p>
                 {/* <button className="px-14 py-4 bg-transparent border border-brandIndigo text-brandIndigo font-semibold text-base hover:bg-brandIndigo hover:text-white transition">
                     Contact Us
                 </button> */}

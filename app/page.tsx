@@ -26,15 +26,31 @@ export default function Home() {
       <div className="flex flex-col items-center justify-center gap-16 md:gap-[6.5rem] mx-8 md:mx-[5.25rem] my-16">
         <TrustedCompanies />
         {/* <CoreValues /> */}
-        <ServiceSections />
-        <TransportSolutions />
+        {/* <ServiceSections /> */}
+        {/* <TransportSolutions /> */}
         <IndiaMapComponent />
         <BillboardBanner />
-        <ContactUsbanner />
+        {/* <ContactUsbanner /> */}
         <FAQ />
         <WhySavaniTransport />
 
         {/* <DirectorInfo /> */}
+        <section className="w-screen py-0 px-6 md:px-20">
+          {/* <h2 className="font-figtree text-2xl md:text-5xl font-semibold primary-text-color text-center">    */}
+          <h2 className="
+    font-figtree 
+    text-2xl md:text-5xl 
+    font-semibold 
+    primary-text-color 
+    text-center
+    max-w-5xl 
+    mx-auto
+    leading-snug md:leading-tight
+  ">
+             At Savani, customers remain at the centre of everything we do. Our dedicated teams ensure responsive communication, clear coordination, and reliable support throughout the shipment lifecycle.
+          </h2>
+
+          </section>
         <Testimonials />
         <FooterBillboard />
         {/* <Awards /> */}
