@@ -86,7 +86,7 @@ body {
 
 /* Progress line - Mobile: max 86%, Desktop: max 100% */
 .timeline-progress-line {
-  max-height: 86% !important;
+  max-height: 85% !important;
 }
 
 @media (min-width: 1024px) {
