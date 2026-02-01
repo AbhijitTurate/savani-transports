@@ -3,10 +3,11 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from 'next/image';
 import ContactButton from './ContactButton';
+import { useRouter } from "next/navigation";
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
-
+    const router = useRouter();
     return (
         <nav className="mx-8 md:mx-[5.25rem] my-8 ">
             <div className="flex items-center justify-between">
@@ -16,6 +17,7 @@ export default function Navbar() {
                         alt="Savani Logo"
                         width={48}
                         height={48}
+                        onClick={() => router.push('/')}
                     />
                 </div>
                 <button
