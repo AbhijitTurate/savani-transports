@@ -32,7 +32,7 @@ const TrustedCompanies = () => {
         {/* Mobile Marquee Layout */}
         <div className="md:hidden w-full overflow-hidden">
           {/* Row 1 */}
-  <div className="flex gap-8 animate-scroll min-w-fit flex-nowrap mb-4">
+  <div className="flex gap-8 animate-scroll [animation-duration:6s] min-w-fit flex-nowrap mb-4">
     {repeatedCompanies.slice(0, Math.ceil(repeatedCompanies.length / 2)).map((logo, index) => (
       <div key={index} className="flex items-center opacity-60 shrink-0">
         <img src={logo} alt={`Company ${index + 1}`} className="h-8 w-auto" />
@@ -41,7 +41,7 @@ const TrustedCompanies = () => {
   </div>
 
   {/* Row 2 */}
-  <div className="flex gap-8 animate-scroll min-w-fit flex-nowrap">
+  <div className="flex gap-8 animate-scroll [animation-duration:6s] min-w-fit flex-nowrap">
     {repeatedCompanies.slice(Math.ceil(repeatedCompanies.length / 2)).map((logo, index) => (
       <div key={index} className="flex items-center opacity-60 shrink-0">
         <img src={logo} alt={`Company ${index + 1}`} className="h-8 w-auto" />
