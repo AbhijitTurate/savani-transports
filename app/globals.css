@@ -63,3 +63,34 @@ body {
     filter: none;
   }
 }
+
+/* Timeline line height - Mobile: 86%, Desktop: full */
+.timeline-line-mobile {
+  height: 86% !important;
+  max-height: 86% !important;
+}
+
+.timeline-line {
+  height: 86% !important;
+  max-height: 86% !important;
+}
+
+@media (min-width: 1024px) {
+  .timeline-line {
+    height: 89% !important;
+    max-height: 89% !important;
+  }
+}
+
+
+
+/* Progress line - Mobile: max 86%, Desktop: max 100% */
+.timeline-progress-line {
+  max-height: 86% !important;
+}
+
+@media (min-width: 1024px) {
+  .timeline-progress-line {
+    max-height: 90% !important;
+  }
+}

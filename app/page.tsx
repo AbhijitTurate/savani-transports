@@ -25,7 +25,6 @@ export default function Home() {
       </div>
       <div className="flex flex-col items-center justify-center gap-16 md:gap-[6.5rem] mx-8 md:mx-[5.25rem] my-16">
         <TrustedCompanies />
-        {/* <CoreValues /> */}
         {/* <ServiceSections /> */}
         {/* <TransportSolutions /> */}
         <IndiaMapComponent />
@@ -33,6 +32,7 @@ export default function Home() {
         {/* <ContactUsbanner /> */}
         <FAQ />
         <WhySavaniTransport />
+        <CoreValues />
 
         {/* <DirectorInfo /> */}
         <section className="w-screen py-0 px-6 md:px-20">

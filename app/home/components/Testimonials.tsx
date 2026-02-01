@@ -42,7 +42,7 @@ export default function Testimonials() {
     return (
         <section id="testimonials" className="w-screen overflow-x-hidden -mx-8 md:-mx-[5.25rem]">
             <div className="px-8 md:px-[5.25rem] pb-4">
-                <h2 className="text-center text-2xl font-normal primary-text-color font-lexend md:text-40 mb-8 md:mb-20">
+                <h2 className="text-center text-2xl font-normal primary-text-color font-lexend md:text-40 mb-2 md:mb-8">
                     Here's what our clients have to say
                 </h2>
             </div>

@@ -1,147 +1,177 @@
 'use client';
-import React, { useState, useEffect, useRef } from 'react';
 
-const values = [
-  {
-    title: "Wherever With Care",
-    description: "Care defines how we operate. Every consignment is handled with responsibility, attention, and respect, because behind every shipment is a business that depends on us."
-  },
-  {
-    title: "Reliability Through Experience",
-    description: "Decades of on-ground experience enable us to deliver consistently, even in complex and time-sensitive situations across India."
-  },
-  {
-    title: "Customer-Centric Partnerships",
-    description: "We build long-term relationships by understanding our customers' needs and delivering solutions that support their business objectives."
-  },
-  {
-    title: "Safety and Responsibility",
-    description: "Safety is non-negotiable. We prioritise secure cargo movement and disciplined operations to protect goods, people, and partnerships."
-  },
-  {
-    title: "Evolving With Purpose",
-    description: "Rooted in legacy, we continuously improve systems and processes to remain efficient, dependable, and future-ready."
-  }
-];
+import React, { useEffect, useRef, useState } from 'react';
 
-const CoreValues = () => {
+const SimpleTimeline = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const timelineContainerRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [dotPositions, setDotPositions] = useState<number[]>([]);
+  const titleRefs = useRef<(HTMLHeadingElement | null)[]>([]);
+
+  const values = [
+    {
+      title: "Wherever With Care",
+      description: "Care defines how we operate. Every consignment is handled with responsibility, attention, and respect, because behind every shipment is a business that depends on us."
+    },
+    {
+      title: "Reliability Through Experience",
+      description: "Decades of on-ground experience enable us to deliver consistently, even in complex and time-sensitive situations across India."
+    },
+    {
+      title: "Customer-Centric Partnerships",
+      description: "We build long-term relationships by understanding our customers' needs and delivering solutions that support their business objectives."
+    },
+    {
+      title: "Safety and Responsibility",
+      description: "Safety is non-negotiable. We prioritise secure cargo movement and disciplined operations to protect goods, people, and partnerships."
+    },
+    {
+      title: "Evolving With Purpose",
+      description: "Rooted in legacy, we continuously improve systems and processes to remain efficient, dependable, and future-ready."
+    }
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!sectionRef.current || !contentRef.current) return;
+      if (!containerRef.current) return;
 
-      const sectionRect = sectionRef.current.getBoundingClientRect();
-      const contentRect = contentRef.current.getBoundingClientRect();
+      const container = containerRef.current as HTMLDivElement;
+      const rect = container.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      // Get the content's position relative to viewport
-      const contentTop = contentRect.top;
-      const contentHeight = contentRect.height;
+      const scrollStart = rect.top;
+      const scrollEnd = rect.bottom - windowHeight;
+      const totalScroll = rect.height - windowHeight;
 
-      // Calculate progress: 0 when content enters viewport, 1 when it exits
-      // Start tracking when content top reaches viewport top
-      // Finish when content bottom reaches viewport top
-      
-      // When content hasn't entered viewport yet
-      if (contentTop > windowHeight) {
+      if (scrollStart > 0) {
         setScrollProgress(0);
-        return;
-      }
+        setActiveIndex(0);
+      } else if (scrollEnd < 0) {
+        setScrollProgress(100);
+        setActiveIndex(values.length - 1);
+      } else {
+        const progress = (Math.abs(scrollStart) / totalScroll) * 100;
+        setScrollProgress(Math.min(progress, 100));
 
-      // When content has completely scrolled past
-      if (contentTop + contentHeight < 0) {
-        setScrollProgress(1);
-        return;
+        const index = Math.floor((progress / 100) * values.length);
+        setActiveIndex(Math.min(index, values.length - 1));
       }
-
-      // Content is in viewport - calculate progress
-      // Total scrollable distance: from when content enters to when it exits
-      const totalDistance = contentHeight + windowHeight;
-      
-      // How much has been scrolled: distance from entry point to current position
-      // Entry point: contentTop = windowHeight (scrolled = 0)
-      // Exit point: contentTop + contentHeight = 0 (scrolled = totalDistance)
-      const scrolled = windowHeight - contentTop;
-      
-      // Calculate progress (0 to 1)
-      const calculatedProgress = Math.max(0, Math.min(1, scrolled / totalDistance));
-      
-      setScrollProgress(calculatedProgress);
     };
 
-    // Initial calculation
+    window.addEventListener('scroll', handleScroll);
     handleScroll();
 
-    // Listen to window scroll
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('resize', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [values.length]);
+
+  useEffect(() => {
+    const updateDotPositions = () => {
+      if (!timelineContainerRef.current) return;
+
+      const positions = titleRefs.current.map((titleRef) => {
+        if (!titleRef || !timelineContainerRef.current) return 0;
+        const titleRect = titleRef.getBoundingClientRect();
+        const containerRect = timelineContainerRef.current.getBoundingClientRect();
+        return titleRect.top - containerRect.top + titleRect.height / 2;
+      });
+
+      setDotPositions(positions);
+    };
+
+    updateDotPositions();
+    window.addEventListener('resize', updateDotPositions);
+    window.addEventListener('scroll', updateDotPositions);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleScroll);
+      window.removeEventListener('resize', updateDotPositions);
+      window.removeEventListener('scroll', updateDotPositions);
     };
   }, []);
 
-  // Calculate which circles should be filled based on progress
-  const getCircleFill = (index: number) => {
-    const totalItems = values.length;
-    const progressPerItem = 1 / totalItems;
-    const itemProgress = (index + 1) * progressPerItem;
-    return scrollProgress >= itemProgress;
-  };
-
   return (
-    <div className="w-full flex flex-col gap-8 md:gap-12" ref={sectionRef}>
-      <h2 className="text-3xl md:text-40 font-semibold font-figtree text-primary-text-color">
-        Core Values
-      </h2>
-      
-      <div className="bg-white rounded-2xl p-6 md:p-8 lg:p-12 relative" ref={contentRef}>
-        {/* Base vertical timeline line - light gray */}
-        <div className="hidden md:block absolute left-[40%] top-8 md:top-12 bottom-8 md:bottom-12 w-0.5 bg-gray-200"></div>
-        
-        {/* Progress vertical timeline line - gets darker as you scroll */}
-        <div
-          className="hidden md:block absolute left-[40%] top-8 md:top-12 w-0.5 bg-gray-800 transition-all duration-300 ease-out"
-          style={{ 
-            height: `${scrollProgress * 100}%`,
-            maxHeight: 'calc(100% - 6rem)'
-          }}
-        ></div>
-        
-        <div className="flex flex-col gap-8 md:gap-10">
-          {values.map((value, index) => {
-            const isFilled = getCircleFill(index);
-            return (
-              <div key={index} className="relative flex flex-col md:flex-row md:items-start gap-4 md:gap-6">
-                {/* Timeline circle - fills progressively */}
-                <div 
-                  className={`hidden md:block absolute left-[calc(40%-6px)] top-1 w-3 h-3 rounded-full border-2 border-white z-10 transition-all duration-300 ${
-                    isFilled ? 'bg-gray-800' : 'bg-gray-200'
+    <div className="bg-white px-4 sm:px-6 lg:px-8">
+      <div
+        ref={containerRef}
+        className="max-w-6xl mx-auto"
+      >
+        {/* Header */}
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-10 lg:mb-15">
+          Core Values
+        </h1>
+
+        <div className="max-w-6xl mx-auto bg-[#F9F9F9] p-6 lg:p-10 rounded-lg">
+        {/* Timeline Container */}
+        <div className="relative" ref={timelineContainerRef}>
+          {/* Background line (light gray) - Mobile: 86%, Desktop: full */}
+          <div 
+            className="absolute top-4 w-0.5 bg-gray-300 left-[0.40rem] lg:left-[calc(33.333%-2px)] timeline-line"
+          ></div>
+
+          {/* Animated progress line - Mobile: 86%, Desktop: full */}
+          <div
+            className="absolute top-4 w-0.5 bg-gray-600 transition-all duration-300 ease-out left-[0.40rem] lg:left-[calc(33.333%-2px)] timeline-progress-line"
+            style={{
+              height: `${scrollProgress}%`
+            }}
+          ></div>
+
+          {/* Values List */}
+          <div className="space-y-12 lg:space-y-16">
+            {values.map((value, index) => (
+              <div
+                key={index}
+                className={`flex flex-col lg:flex-row lg:items-start gap-1 lg:gap-16 transition-all duration-500 ${index <= activeIndex ? 'opacity-100' : 'opacity-50'
                   }`}
-                ></div>
-                
-                {/* Content */}
-                <div className="md:pl-12 flex-1">
-                  <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-                    <h3 className="text-xl md:text-2xl font-semibold font-figtree text-primary-text-color md:w-2/5">
-                      {value.title}
-                    </h3>
-                    <p className="text-sm md:text-base font-figtree text-primary-text-color-70 md:w-3/5 md:text-left">
-                      {value.description}
-                    </p>
+              >
+                {/* Left side - Title and Timeline */}
+                <div className="lg:w-1/3 flex flex-row-reverse lg:flex-row items-center gap-6">
+                  <h2
+                    ref={(el) => { titleRefs.current[index] = el; }}
+                    className={`text-xl sm:text-2xl font-medium  pl-6 lg:pl-0 flex-1 transition-colors duration-500 ${index <= activeIndex ? 'text-gray-900' : 'text-gray-500'
+                      }`} 
+                  >
+                    {value.title}
+                  </h2>
+                </div>
+
+                {/* Timeline dot - positioned relative to timeline container, aligned with title */}
+                {dotPositions[index] !== undefined && (
+                  <div 
+                    className="absolute z-10 flex-shrink-0 left-[0.45rem] lg:left-[calc(33.333%-1px)]"
+                    style={{
+                      transform: 'translateX(-50%) translateY(-50%)',
+                      top: `${dotPositions[index]}px`
+                    }}
+                  >
+                    <div
+                      className={`w-3 h-3 rounded-full border flex items-center justify-center transition-all duration-500 ${index <= activeIndex
+                          ? 'bg-gray-800 border-gray-800'
+                          : 'bg-white border-gray-300'
+                        }`}
+                    >
+                    </div>
                   </div>
+                )}
+
+                {/* Right side - Description */}
+                <div className="lg:w-2/3 pl-6 lg:pl-0">
+                  <p
+                    className={`text-base sm:text-lg leading-relaxed transition-colors duration-500 ${index <= activeIndex ? 'text-gray-900' : 'text-gray-600'
+                      }`}
+                  >
+                    {value.description}
+                  </p>
                 </div>
               </div>
-            );
-          })}
+            ))}
+          </div>
+        </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default CoreValues;
+export default SimpleTimeline;
