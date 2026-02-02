@@ -18,6 +18,15 @@ const lexend = Lexend({
 export const metadata: Metadata = {
   title: "Savani Transport",
   description: "Savani Transport is a logistics company that provides transportation services to businesses and individuals.",
+  icons: {
+    icon: [
+      { url: '/favicon-for-app/icon0.svg', type: 'image/svg+xml' },
+      { url: '/favicon.ico' },
+    ],
+    apple: [
+      { url: '/favicon-for-app/apple-icon.png' },
+    ],
+  },
 };
 
 export default function RootLayout({
