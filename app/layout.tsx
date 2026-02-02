@@ -20,12 +20,10 @@ export const metadata: Metadata = {
   description: "Savani Transport is a logistics company that provides transportation services to businesses and individuals.",
   icons: {
     icon: [
-      { url: '/favicon-for-app/icon0.svg', type: 'image/svg+xml' },
-      { url: '/favicon.ico' },
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-for-app/icon1.png', type: 'image/png' },
     ],
-    apple: [
-      { url: '/favicon-for-app/apple-icon.png' },
-    ],
+    apple: '/favicon-for-app/apple-icon.png',
   },
 };
 
