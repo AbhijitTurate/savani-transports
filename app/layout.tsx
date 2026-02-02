@@ -20,10 +20,23 @@ export const metadata: Metadata = {
   description: "Savani Transport is a logistics company that provides transportation services to businesses and individuals.",
   icons: {
     icon: [
+      { url: '/favicon.ico', sizes: 'any' },
       { url: '/icon.svg', type: 'image/svg+xml' },
-      { url: '/favicon-for-app/icon1.png', type: 'image/png' },
+      { url: '/favicon-for-app/icon1.png', type: 'image/png', sizes: '32x32' },
     ],
-    apple: '/favicon-for-app/apple-icon.png',
+    apple: '/apple-icon.png',
+    shortcut: '/favicon.ico',
+  },
+  openGraph: {
+    title: "Savani Transport",
+    description: "Savani Transport is a logistics company that provides transportation services to businesses and individuals.",
+    type: "website",
+    siteName: "Savani Transport",
+  },
+  twitter: {
+    card: "summary",
+    title: "Savani Transport",
+    description: "Savani Transport is a logistics company that provides transportation services to businesses and individuals.",
   },
 };
 
