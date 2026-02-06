@@ -20,7 +20,7 @@ const BillboardBanner = () => {
           
           <div className="relative flex flex-col md:flex-row items-center md:items-end justify-between gap-12 px-6 md:px-14 py-12 md:py-16 z-10">
             {/* Left content */}
-            <div className="max-w-xl text-white flex flex-col w-full md:w-auto z-20 gap-6 lg:gap-14">
+            <div className="max-w-xl items-center md:items-start text-white flex flex-col w-full md:w-auto z-20 gap-6 lg:gap-14">
               <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-figtree font-bold leading-tight md:whitespace-nowrap">
                 Built to Deliver. Trusted to Perform.
               </h1>
@@ -35,7 +35,7 @@ const BillboardBanner = () => {
                 <ContactButton 
                   variant="primary_white" 
                   size="lg"
-                  className="w-[288px] h-[72px] mx-auto md:mx-0"
+                  className="w-[250px] max-w-[250px] sm:w-[288px] h-[72px] mx-auto md:mx-0"
                 >
                   Get a quote
                 </ContactButton>

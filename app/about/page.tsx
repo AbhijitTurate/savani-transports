@@ -31,7 +31,7 @@ const About = () => {
 
 As a family managed enterprise, Savani has been built on long-term relationships, ethical business practices, and a deep understanding of India’s transport ecosystem. Over the decades, we have supported the growth of industries by ensuring safe, timely, and efficient movement of goods across the nation.
 
-Today, Savani Transports operates through a network of over 70 branches and franchises across India, offering comprehensive road transport solutions to businesses of all sizes. We serve a wide range of industries including textiles, pharmaceuticals, chemicals, FMCG, automotive, engineering, and manufacturing.`
+Today, Savani Transports operates through a network of over 110+ outlets and franchises across India, offering comprehensive road transport solutions to businesses of all sizes. We serve a wide range of industries including textiles, pharmaceuticals, chemicals, FMCG, automotive, engineering, and manufacturing.`
         },
        
     ]

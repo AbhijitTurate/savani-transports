@@ -83,18 +83,38 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
     console.log('Form data::::', formData);
     try {
       // ⬇️ CALL NEXT.JS API ROUTE
-      const response = await fetch("/api/contact", {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      // const response = await fetch("/api/contact", {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify(formData),
+      // });
 
-      if (!response.ok) {
-        throw new Error("Failed to send email");
-      }
+      // console.log('Response::::', response);
+      // if (!response.ok) {
+      //   const error = await response.json();
+      //   console.log('Error::::', error);
+      //   throw new Error(error.error || "Failed to send email");
+      // }
 
+       // Send email using EmailJS
+       const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        industry: formData.industry,
+        message: formData.message,
+        to_email: 'abhidoinstudy@gmail.com',
+        reply_to: formData.email,
+      };
+
+      const result = await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
+      
       toast("Successfully submitted details. Thank you!", { type: "success" });
       setSubmitStatus('success');
       setFormData({ name: '', email: '', industry: '', message: '' });
