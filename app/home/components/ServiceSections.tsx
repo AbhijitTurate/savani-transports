@@ -14,7 +14,8 @@ export default function ServiceSections() {
         "Shared truck space without compromising delivery reliability"
       ],
       image: "/assets/service1.png", // Placeholder - user will replace
-      imagePosition: "right" as const
+      imagePosition: "right" as const,
+      sectionId: "ptl-section"
     },
     {
       title: "Full Truck Load (FTL) - Best when your shipment requires an entire vehicle",
@@ -30,7 +31,9 @@ export default function ServiceSections() {
         "Higher safety and faster turnaround"
       ],
       image: "/assets/service2.png", // Placeholder - user will replace
-      imagePosition: "left" as const
+      imagePosition: "left" as const,
+      sectionId: "ftl-section"
+
     },
     {
       title: "Value Added Logistics Services -Best when you need more than just transport",
@@ -43,7 +46,8 @@ export default function ServiceSections() {
         "Surface transport and express cargo movement"
       ],
       image: "/assets/service3.jpg", // Placeholder - user will replace
-      imagePosition: "right" as const
+      imagePosition: "right" as const,
+      sectionId: "value-section"
     }
   ];
 
@@ -52,6 +56,7 @@ export default function ServiceSections() {
       {services.map((service, index) => (
         <div
           key={index}
+          id={service.sectionId}
           className={`flex flex-col-reverse sm:flex-col items-center ${
             service.imagePosition === "left" ? "md:flex-row-reverse" : "md:flex-row"
           } items-start gap-8 md:gap-[124px]`}

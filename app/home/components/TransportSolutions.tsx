@@ -1,16 +1,21 @@
-import ContactButton from "@/components/ContactButton";
+'use client'
+
+import { useRouter } from 'next/navigation';
 
 export default function TransportSolutions() {
+    const router = useRouter();
     const services = [
         {
             title: "FTL (Full Truck Load)",
             description: "Entire truck booked, faster delivery, ideal for bulk business consignments",
-            icon: "/assets/truck-loaded.svg"
+            icon: "/assets/truck-loaded.svg",
+            navigatePath: '/our-services#ftl-section'
         },
         {
             title: "PTL (Part Truck Load)",
             description: "Share truck space, cost-effective option for medium or small shipments",
-            icon: "/assets/truck.svg"
+            icon: "/assets/truck.svg",
+            navigatePath: "/our-services#ptl-section"
         },
         {
             title: "SRL (Surface Rail Logistics)",
@@ -34,6 +39,9 @@ export default function TransportSolutions() {
         }
     ];
 
+    const handleNavigate = (navigatePath: string) => {
+        router.push(navigatePath);
+    }
     return (
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-16">
             {/* Left Section */}
@@ -54,6 +62,7 @@ export default function TransportSolutions() {
                     <div
                         key={index}
                         className={`p-4 lg:p-11 flex flex-col justify-center items-start gap-3`}
+                        {...(service.navigatePath && {onClick: () => handleNavigate(service.navigatePath)})}
                     >
                         <img
                             src={service.icon}
